@@ -1,13 +1,19 @@
-# ===============================
-# __init__.py - Punto de entrada del paquete
-# ===============================
-# Este archivo permite importar directamente las funciones
-# principales desde el paquete "mi_libreria_texto".
+"""
+__init__.py – Punto de entrada del paquete `proyecto`.
 
-from .limpieza import limpiar_texto  # Limpieza del texto
+Permite importar directamente las funciones clave para
+el procesamiento y análisis de texto.
+
+Desarrollado por Valentina Bailón Cano · Máster Data Science & IA – EVOLVE
+"""
+
+# Funciones de limpieza
+from .limpieza import limpiar_texto
+
+# Funciones de análisis
 from .analisis import (
-    contar_palabras,  # Cuenta el número total de palabras
-    frecuencia_palabras,  # Cuenta la frecuencia de cada palabra
-    eliminar_stopwords,  # Elimina palabras vacías (stopwords)
-    detectar_idioma  # Detecta el idioma del texto
+    contar_palabras,
+    frecuencia_palabras,
+    eliminar_stopwords,
+    detectar_idioma
 )
