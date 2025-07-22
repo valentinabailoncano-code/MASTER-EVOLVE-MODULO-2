@@ -101,7 +101,7 @@ pip install -e .
 ## 🌐 Aplicación Web
 
 Accede a la app online desarrollada con Streamlit:  
-🔗 [Abrir en Streamlit Cloud](https://valentinabailoncano-master-evolve-modulo-2.streamlit.app/)
+🔗 [Abrir en Streamlit Cloud](https://master-evolve-modulo-2.streamlit.app/)
 
 ---
 
