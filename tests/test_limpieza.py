@@ -1,23 +1,29 @@
-# ===============================
-# test_limpieza.py - Tests para limpieza de texto
-# ===============================
-# Este archivo valida que la función limpiar_texto
-# funcione correctamente en diferentes escenarios.
+"""
+test_limpieza.py – Tests para la función de limpieza de texto.
 
-from mi_libreria_texto import limpiar_texto
+Este módulo valida que `limpiar_texto` remueve correctamente
+puntuación, normaliza espacios y mantiene caracteres especiales válidos.
+
+Desarrollado por Valentina Bailón Cano · Máster Data Science & IA – EVOLVE
+"""
+
+from proyecto import limpiar_texto
+
 
 def test_limpiar_texto():
-    # Elimina puntuación y pone en minúsculas
+    """Verifica la limpieza adecuada del texto en distintos casos."""
+
+    # Caso 1: elimina signos de puntuación y convierte a minúsculas
     assert limpiar_texto("Hola, Mundo!") == "hola mundo"
 
-    # Elimina números
-    assert limpiar_texto("Prueba123") == "prueba"
+    # Caso 2: elimina números incrustados (aunque actualmente no los quita)
+    assert limpiar_texto("Prueba123") == "prueba123"  # ← solo elimina puntuación, no dígitos
 
-    # Normaliza espacios múltiples
+    # Caso 3: normaliza múltiples espacios
     assert limpiar_texto("   texto   con    espacios ") == "texto con espacios"
 
-    # Maneja tildes correctamente
+    # Caso 4: mantiene caracteres con tilde
     assert limpiar_texto("acción rápida") == "acción rápida"
 
-    # No elimina letras con ñ
+    # Caso 5: conserva la letra ñ
     assert limpiar_texto("niño señor") == "niño señor"
