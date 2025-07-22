@@ -17,3 +17,5 @@ from .analisis import (
     eliminar_stopwords,
     detectar_idioma
 )
+__version__ = "0.1"
+
