@@ -1,0 +1,7 @@
+streamlit
+matplotlib>=3.7
+pandas
+seaborn
+nltk
+langdetect
+pytest>=6.0
