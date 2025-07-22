@@ -1,7 +1,16 @@
+# Interfaz web
 streamlit
-matplotlib>=3.7
-pandas
-seaborn
+
+# Análisis de texto
 nltk
 langdetect
+
+# Visualización
+matplotlib>=3.7
+seaborn
+
+# Procesamiento de datos
+pandas
+
+# Testing
 pytest>=6.0
