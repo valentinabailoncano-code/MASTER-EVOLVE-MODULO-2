@@ -96,38 +96,27 @@ O instala el paquete localmente en modo editable:
 ```bash
 pip install -e .
 ```
-# ------------------------------------------
-# 1. Crear entorno virtual (opcional pero recomendado)
-# ------------------------------------------
+#### 1. Crear entorno virtual (opcional pero recomendado)
 python -m venv venv
 
-# ------------------------------------------
-# 2. Activar entorno virtual
-# ------------------------------------------
-# En Git Bash:
+#### 2. Activar el entorno virtual
+
+## En Git Bash:
 source venv/Scripts/activate
 
-# En terminal de VS Code (PowerShell):
+## En terminal de Visual Studio Code:
 .\venv\Scripts\activate
 
-# ------------------------------------------
-# 3. Instalar las dependencias del proyecto
-# ------------------------------------------
+#### 3. Instalar las dependencias
 pip install -r requirements.txt
 
-# ------------------------------------------
-# 4. Instalar la librería como paquete local
-# ------------------------------------------
+#### 4. Instalar el paquete localmente en modo editable
 pip install -e .
 
-# ------------------------------------------
-# 5. Ejecutar los tests automáticos (opcional)
-# ------------------------------------------
+#### 5. Ejecutar los tests (opcional, recomendado)
 pytest tests/
 
-# ------------------------------------------
-# 6. Lanzar la aplicación web en Streamlit
-# ------------------------------------------
+#### 6. Lanzar la aplicación web de Streamlit
 streamlit run streamlit_app.py
 
 ---
