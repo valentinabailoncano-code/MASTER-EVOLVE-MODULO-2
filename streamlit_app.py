@@ -18,7 +18,7 @@ except LookupError:
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), 'MASTER-EVOLVE-MODULO-2')))
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), 'mi_libreria_texto')))
 
-from limpieza import limpiar_texto
+from proyecto.limpieza import limpiar_texto
 from analisis import detectar_idioma, eliminar_stopwords, contar_palabras, frecuencia_palabras
 
 # Configuración inicial de la página
