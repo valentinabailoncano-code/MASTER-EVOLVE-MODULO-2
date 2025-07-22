@@ -1,32 +1,41 @@
-# streamlit_app.py - Visualización web para MASTER-EVOLVE-MODULO-2
+"""
+streamlit_app.py – Visualización interactiva de análisis de texto
+
+Esta aplicación web forma parte del proyecto académico MASTER-EVOLVE-MODULO-2
+y permite realizar análisis textual en tiempo real:
+- Limpieza
+- Detección de idioma
+- Eliminación de stopwords
+- Conteo y visualización de frecuencias
+
+Desarrollado por Valentina Bailón Cano · Máster en Data Science & IA – EVOLVE
+"""
 
 import streamlit as st
 import matplotlib.pyplot as plt
 import pandas as pd
-import seaborn as sns
-import sys
-import os
 import nltk
 
-# Forzar descarga de stopwords si no existen (para Streamlit Cloud)
+from proyecto.limpieza import limpiar_texto
+from proyecto.analisis import (
+    detectar_idioma,
+    eliminar_stopwords,
+    contar_palabras,
+    frecuencia_palabras
+)
+
+# Descargar stopwords si no existen (útil para Streamlit Cloud)
 try:
     nltk.data.find('corpora/stopwords')
 except LookupError:
     nltk.download('stopwords')
 
-# Añadir ruta del paquete manualmente para Streamlit Cloud
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), 'MASTER-EVOLVE-MODULO-2')))
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), 'mi_libreria_texto')))
-
-from proyecto.limpieza import limpiar_texto
-from analisis import detectar_idioma, eliminar_stopwords, contar_palabras, frecuencia_palabras
-
-# Configuración inicial de la página
+# Configuración inicial de Streamlit
 st.set_page_config(page_title="MASTER-EVOLVE-MODULO-2", layout="centered")
 st.title("🧹 Análisis de Texto — MASTER-EVOLVE-MODULO-2")
 
 st.markdown("""
-Esta aplicación web analiza tu texto ingresado y te muestra:
+Esta aplicación analiza tu texto ingresado y te muestra:
 - Idioma detectado
 - Texto limpio
 - Texto sin stopwords
@@ -34,31 +43,32 @@ Esta aplicación web analiza tu texto ingresado y te muestra:
 - Visualizaciones interactivas
 """)
 
-# Entrada de usuario
+# Entrada del usuario
 texto_usuario = st.text_area("Introduce tu texto aquí:", height=200)
 
 if texto_usuario:
     with st.spinner("Procesando texto..."):
-        # Detección de idioma
+
+        # 1. Detección de idioma
         idioma = detectar_idioma(texto_usuario)
         st.success(f"🌍 Idioma detectado: {idioma}")
 
-        # Limpieza
+        # 2. Limpieza del texto
         texto_limpio = limpiar_texto(texto_usuario)
         st.text_area("🔤 Texto limpio:", texto_limpio, height=100)
 
-        # Stopwords
+        # 3. Eliminación de stopwords
         texto_filtrado = eliminar_stopwords(texto_limpio, idioma)
         st.text_area("🧹 Texto sin stopwords:", texto_filtrado, height=100)
 
-        # Conteo y frecuencia
+        # 4. Conteo y frecuencia
         num_palabras = contar_palabras(texto_filtrado)
         st.write(f"🧮 Número total de palabras significativas: `{num_palabras}`")
 
         frecuencia = frecuencia_palabras(texto_filtrado)
 
         if frecuencia:
-            # Convertir a DataFrame
+            # Convertir frecuencias a DataFrame
             df_frec = pd.DataFrame(frecuencia.items(), columns=["Palabra", "Frecuencia"])
             df_frec = df_frec.sort_values(by="Frecuencia", ascending=False)
 
@@ -81,7 +91,7 @@ if texto_usuario:
             plt.tight_layout()
             st.pyplot(fig_scatter)
 
-            # Tabla
+            # Tabla con resultados
             st.subheader("📋 Tabla de frecuencias")
             st.dataframe(df_frec.reset_index(drop=True))
 
