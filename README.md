@@ -1,7 +1,12 @@
 # 🧹 MASTER-EVOLVE-MODULO-2
 
-Librería Python desarrollada en el marco del Máster en Data Science & IA de Evolve.  
-Ofrece funciones de procesamiento y análisis léxico de texto con visualización de frecuencias, soporte multilenguaje y limpieza avanzada.
+Librería Python desarrollada por **Valentina Bailón Cano** en el marco del Máster en Data Science & IA de **Evolve**.
+
+Ofrece funciones de procesamiento y análisis léxico de texto con:
+- Limpieza avanzada
+- Detección automática de idioma
+- Eliminación de stopwords multilingües
+- Visualización de frecuencias
 
 ---
 
@@ -20,14 +25,14 @@ Ofrece funciones de procesamiento y análisis léxico de texto con visualizació
   Calcula el número total de palabras significativas.
 
 - 📊 **Frecuencia de palabras**  
-  Calcula cuántas veces aparece cada palabra y las visualiza en un gráfico de barras.
+  Calcula cuántas veces aparece cada palabra y las visualiza en un gráfico de barras o dispersión.
 
 ---
 
 ## 🧪 Ejemplo de uso
 
 ```python
-from mi_libreria_texto import (
+from proyecto import (
     limpiar_texto,
     detectar_idioma,
     eliminar_stopwords,
@@ -56,13 +61,15 @@ print(f"Frecuencias: {frecuencias}")
 
 ```
 MASTER-EVOLVE-MODULO-2/
-├── mi_libreria_texto/
+├── proyecto/
 │   ├── __init__.py
 │   ├── limpieza.py
 │   └── analisis.py
+│
 ├── tests/
 │   ├── test_limpieza.py
 │   └── test_analisis.py
+│
 ├── main.py
 ├── streamlit_app.py
 ├── requirements.txt
@@ -72,26 +79,34 @@ MASTER-EVOLVE-MODULO-2/
 
 ---
 
-## 🔗 Requisitos
+## 🧩 Requisitos e instalación
 
-- `nltk`
-- `langdetect`
-- `matplotlib`
-- `pytest`
-- `streamlit`
-
-Instala todo fácilmente con:
+Instala las dependencias desde el archivo `requirements.txt`:
 
 ```bash
 pip install -r requirements.txt
 ```
+
+O instala el paquete localmente en modo editable:
+
+```bash
+pip install -e .
+```
+
+---
+
+## 🌐 Aplicación Web
+
+Accede a la app online desarrollada con Streamlit:  
+🔗 [Abrir en Streamlit Cloud](https://valentinabailoncano-master-evolve-modulo-2.streamlit.app/)
 
 ---
 
 ## 👩‍💻 Autora
 
 **Valentina Bailón Cano**  
+Máster en Data Science & IA – Evolve  
 📎 [LinkedIn](https://www.linkedin.com/in/valentina-bailon-2653b22b7/)  
-🔗 [Ver repositorio en GitHub](https://github.com/valentinabailoncano-code/MASTER-EVOLVE-MODULO-2)  
-🌐 [Abrir app en Streamlit Cloud](https://valentinabailoncano-master-evolve-modulo-2.streamlit.app/)
+🔗 [Ver repositorio en GitHub](https://github.com/valentinabailoncano-code/MASTER-EVOLVE-MODULO-2)
 
+---
