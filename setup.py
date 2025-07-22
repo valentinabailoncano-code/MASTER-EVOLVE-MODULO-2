@@ -1,22 +1,32 @@
-# ===============================
-# setup.py - Configuración del paquete
-# ===============================
-# Este archivo permite instalar la librería como paquete
-# usando el comando: pip install .
-# Incluye metadatos y dependencias necesarias.
+"""
+setup.py – Configuración del paquete `proyecto`.
+
+Permite instalar el paquete localmente con: pip install .
+Incluye metadatos, dependencias y detección automática de submódulos.
+
+Desarrollado por Valentina Bailón Cano · Máster Data Science & IA – EVOLVE
+"""
 
 from setuptools import setup, find_packages
 
 setup(
-    name='mi_libreria_texto',  # Nombre del paquete
-    version='0.1.0',  # Versión inicial
-    packages=find_packages(),  # Detecta todos los subpaquetes automáticamente
-    install_requires=[],  # Dependencias externas (añadidas por requirements.txt)
-    author='Valentina Bailón Cano',  # Tu nombre
-    description='Librería para limpiar y analizar texto con visualización de frecuencias.',
-    url='https://github.com/valentinabailoncano-code/mi_libreria_texto',  # URL del repo en GitHub
+    name='proyecto',  # Nombre del paquete real
+    version='0.1.0',
+    packages=find_packages(),  # Encuentra todos los subpaquetes (como "proyecto/")
+    install_requires=[
+        'nltk',
+        'langdetect',
+        'matplotlib'
+    ],
+    author='Valentina Bailón Cano',
+    description='Librería educativa para limpieza, análisis y visualización de texto',
+    url='https://github.com/valentinabailoncano-code/MASTER-EVOLVE-MODULO-2',
     classifiers=[
         'Programming Language :: Python :: 3',
         'License :: OSI Approved :: MIT License',
     ],
+    python_requires='>=3.7',
 )
+# Este archivo setup.py permite instalar el paquete localmente
+# con el comando `pip install .` en la raíz del proyecto.
+# Incluye metadatos, dependencias y detecta automáticamente los submódulos.
