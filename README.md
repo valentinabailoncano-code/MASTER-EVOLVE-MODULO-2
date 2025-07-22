@@ -1,4 +1,7 @@
 # 🧹 MASTER-EVOLVE-MODULO-2
+![Streamlit](https://img.shields.io/badge/Streamlit-App%20Activa-brightgreen?logo=streamlit)
+![Pytest](https://img.shields.io/badge/Tests-Pasando-blue?logo=pytest)
+![MIT License](https://img.shields.io/badge/License-MIT-yellow.svg)
 
 Librería Python desarrollada por **Valentina Bailón Cano** en el marco del Máster en Data Science & IA de **Evolve**.
 
